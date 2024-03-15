@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class UserProfile extends Model
+class File extends Model
 {
     use HasFactory, SoftDeletes;
 
@@ -17,18 +17,18 @@ class UserProfile extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'user_id',
-        'first_name',
-        'last_name',
-        'sex',
-        'birth_date',
+        'type',
+        'extension',
+        'original_name',
+        'server_name',
+        'uploader_user_id',
     ];
 
 
     // *********** Relation Functions *********** //
 
-    public function user(): BelongsTo
+    public function uploader(): BelongsTo
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'uploader_user_id');
     }
 }

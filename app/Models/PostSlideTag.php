@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class UserProfile extends Model
+class PostTag extends Model
 {
     use HasFactory, SoftDeletes;
 
@@ -17,18 +17,22 @@ class UserProfile extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'user_id',
-        'first_name',
-        'last_name',
-        'sex',
-        'birth_date',
+        'post_slide_id',
+        'tagged_user_id',
+        'flag_horizontal_position',
+        'flag_vertical_position',
     ];
 
 
     // *********** Relation Functions *********** //
 
-    public function user(): BelongsTo
+    public function postSlide(): BelongsTo
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(PostSlide::class);
+    }
+
+    public function taggedUser(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'tagged_user_id');
     }
 }

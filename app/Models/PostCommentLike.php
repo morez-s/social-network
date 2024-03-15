@@ -4,12 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class UserProfile extends Model
+class PostCommentLike extends Model
 {
-    use HasFactory, SoftDeletes;
+    use HasFactory;
 
     /**
      * The attributes that are mass assignable.
@@ -17,11 +16,8 @@ class UserProfile extends Model
      * @var array<int, string>
      */
     protected $fillable = [
+        'post_comment_id',
         'user_id',
-        'first_name',
-        'last_name',
-        'sex',
-        'birth_date',
     ];
 
 
