@@ -41,6 +41,9 @@ class UserRepository
             // create profile record for the user in database
             $user->profile()->create();
 
+            // create page record for the user in database
+            $user->page()->create();
+
             DB::commit();
 
             return $user;
