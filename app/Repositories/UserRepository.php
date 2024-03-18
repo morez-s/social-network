@@ -18,7 +18,6 @@ class UserRepository
     public function __construct()
     {
         $this->query = User::query();
-        $this->profileQuery = UserProfile::query();
     }
 
     /**
@@ -50,7 +49,7 @@ class UserRepository
 
         } catch (Exception $e) {
 
-            Log::info('User registration process failed: ' . $e->getMessage());
+            Log::error(__CLASS__ . ' => ' . 'User registration process failed: ' . $e->getMessage());
 
             DB::rollback();
 
