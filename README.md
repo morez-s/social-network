@@ -10,9 +10,11 @@ Getting Started
 
 * Clone the repository
 * Run `composer install`
+* Copy `.env.example` to `.env`
 * Modify `.env` file to configure connection to your local database
 * Run `php artisan migrate`
 * Run `php artisan scribe:generate`
+* Run `php artisan serve`
 * Access APIs documentation published in `/docs/index.html`
 * Use `/api/auth/registration` endpoint to register in the application
 * Use `/api/auth/login` endpoint to get your authentication token
