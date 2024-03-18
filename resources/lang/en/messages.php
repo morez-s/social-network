@@ -18,4 +18,10 @@ return [
             'your_account_is_banned' => 'Your account is banned temporarily.',
         ]
     ],
+
+    'posts' => [
+        'successful' => [
+            'post_started_to_upload' => 'Post started to upload.',
+        ],
+    ],
 ];
