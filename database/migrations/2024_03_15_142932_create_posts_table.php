@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('share_link');
             $table->foreignId('page_id')->constrained();
-            $table->string('caption')->nullable();
+            $table->string('caption', 191)->nullable()->index();
             $table->unsignedBigInteger('likes')->default(0);
             $table->unsignedBigInteger('shares')->default(0);
             $table->timestamps();
