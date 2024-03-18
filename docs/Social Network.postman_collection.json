@@ -1,0 +1,251 @@
+{
+	"info": {
+		"_postman_id": "70622326-f21a-48f6-9f64-30952d740286",
+		"name": "Social Network",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6569471",
+		"_collection_link": "https://gold-comet-7143.postman.co/workspace/My-Workspace~74eaffb6-feb6-41e9-82f8-cbdd5304368f/collection/6569471-70622326-f21a-48f6-9f64-30952d740286?action=share&source=collection_link&creator=6569471"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Registration",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"morez2024\",\n    \"email\": \"m.sahelgozin@gmail.com\",\n    \"password\": \"Ms123456@\",\n    \"password_confirmation\": \"Ms123456@\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/registration",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"registration"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"morez2024\",\n    \"password\": \"Ms123456@\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/logout",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Post",
+			"item": [
+				{
+					"name": "Store",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "slide_file[0]",
+									"type": "file",
+									"src": "/media/morez/1TB HDD/Projects/Nobatdehi/payment-method-icons/cash-register-solid.svg"
+								},
+								{
+									"key": "slide_order[0]",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "slide_tag_user_id[0][0]",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "slide_tag_horizontal_position[0][0]",
+									"value": "160",
+									"type": "text"
+								},
+								{
+									"key": "slide_tag_vertical_position[0][0]",
+									"value": "150",
+									"type": "text"
+								},
+								{
+									"key": "slide_tag_user_id[0][1]",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "slide_tag_horizontal_position[0][1]",
+									"value": "200",
+									"type": "text"
+								},
+								{
+									"key": "slide_tag_vertical_position[0][1]",
+									"value": "210",
+									"type": "text"
+								},
+								{
+									"key": "slide_file[1]",
+									"type": "file",
+									"src": "/media/morez/1TB HDD/Projects/Nobatdehi/payment-method-icons/credit-card-solid.svg"
+								},
+								{
+									"key": "slide_order[1]",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "caption",
+									"value": "first post",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/posts",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMGQ2NTE4ZDYyMjYyNTcyZDBiMjE1MzFiOTlmYjQ3YTFhMzc5NzU4ZjAwMWNjZWVlZWU0MmJmZjM2ZjVmM2JlODM3YzU1ZDAwNjIyNDVmMTMiLCJpYXQiOjE3MTA2MDg4NDMuNTQ1NTAwMDQwMDU0MzIxMjg5MDYyNSwibmJmIjoxNzEwNjA4ODQzLjU0NTUwMTk0NzQwMjk1NDEwMTU2MjUsImV4cCI6MTc0MjE0NDg0My41NDEzOTM5OTUyODUwMzQxNzk2ODc1LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.d7ksgfr7n-ig5HqkqZmCM8jfrBZKM5JE7q-4Hl05xUJQ26b8jqZK3L9Z-TuXJNoTn7MMLkPYqzcR0l2LjF_PSYFA9cv2WlD3yh0Z6mABcFhz1BTwNGQL4gM1cQ1lWHtJT90ZqsWQBPBcbtz0QzHCyY1vsiHNDF7bWIS0W0IU0ubHy4jpYGTzKNITlrHs7M5ESHTIgWQdWE_7DzzrmEfkDGRmBYn4swoNGNEzOFDOs7_uWhga6RRJLAEfTPi-U5KGTJ2GGOnA79E2SCL8uxe2Hrc5eJdSSIXUAtT0_8j6BpExAUfpWiCXXRto7qoS5_Nd2OhLFlsOMj1U3tRtIkfPDK5VQlZ7QYpkxc1l9AzRs3CiYXVuT5-QQuZgylgNW2kuxiFleXbQXdj6ldsUQklnkNsxnfHzybAJC7pGRVkZiIJ7vpdLQ11wW3WliW0ER5YoU0uR-ge-OAHBA2kfQifNnUUFIsyn6BVL5bRrDFkYW9Exn4sn0lNduBmzjrjtWQnNTA3jRjz0xG2KIdR2EndPapRLLoAsFksgZ3dgldkvTqzsVoe-qYPvCGukGbwaA6XHSwIzVRF-wKNpCLhFAFQP7V3dXP_u2uQ7aOYJjmX2DpWbFOok8WvB3o2HRCcoAaX-3V97O5pRUx1DE7B5EYnjpkCSyspzX9L8AwyuhadGQdc",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8000/api",
+			"type": "string"
+		}
+	]
+}
