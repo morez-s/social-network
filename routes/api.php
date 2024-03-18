@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,7 +16,39 @@ use App\Http\Controllers\AuthController;
 |
 */
 
+
+
+/*
+|--------------------------------------------------------------------------
+| Routes For Guest Users
+|--------------------------------------------------------------------------
+*/
+
 // ********** Authentication ********** //
 
 Route::post('/auth/registration', [AuthController::class, 'registration'])->name('registration');
 Route::post('/auth/login', [AuthController::class, 'login'])->name('login');
+
+
+
+/*
+|--------------------------------------------------------------------------
+| Routes For Authenticated Users
+|--------------------------------------------------------------------------
+*/
+
+Route::group(['middleware' => ['auth:api', 'check_if_user_is_not_banned']], function()
+{
+
+    // ********** Authentication ********** //
+
+    Route::post('/auth/logout', [AuthController::class, 'logout'])->name('logout');
+
+
+    // ************** Posts ************** //
+
+    Route::apiResource('/posts', PostController::class)->only('store')->names([
+        'store' => 'posts.store',
+    ]);
+
+});

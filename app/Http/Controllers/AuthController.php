@@ -96,4 +96,25 @@ class AuthController extends Controller
             $userInfo
         );
     }
+
+    /**
+     * Logout
+     *
+	 * Revokes and deletes the authentication user token.
+     *
+	 */
+    public function logout()
+    {
+        // get authenticated user
+        $user = auth()->user();
+
+        // revoke and delete user token
+        $user->token()->revoke();
+        $user->token()->delete();
+
+        // return response
+        return prepareSuccessfulResponse(
+            trans('messages.auth.successful.logout')
+        );
+    }
 }

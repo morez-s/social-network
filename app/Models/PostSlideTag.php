@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class PostTag extends Model
+class PostSlideTag extends Model
 {
     use HasFactory, SoftDeletes;
 
@@ -21,6 +21,16 @@ class PostTag extends Model
         'tagged_user_id',
         'flag_horizontal_position',
         'flag_vertical_position',
+    ];
+
+    /**
+     * The attributes that should be cast to native types.
+     *
+     * @var array
+     */
+    protected $casts = [
+        'flag_horizontal_position' => 'float',
+        'flag_vertical_position' => 'float',
     ];
 
 
