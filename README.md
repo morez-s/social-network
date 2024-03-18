@@ -1,7 +1,7 @@
 A SOCIAL NETWORK PROJECT START POINT
 ====================================
 
-This is a raw project of a social network server application. Migrations for the sample database schema is provided in the project. There are also authentication apis and a sample post upload api with the related controllers and repositories. File storing approach is ready for furthur usage.
+This is a raw project for a social network server application. Migrations for the sample database schema are provided in the project. Additionally, authentication APIs and a sample post upload API with related controllers and repositories are included. The file storage approach is ready for further development.
 
 Hope you enjoy the application :)
 
