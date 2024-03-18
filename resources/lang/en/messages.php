@@ -11,6 +11,7 @@ return [
         'successful' => [
             'successful_registration' => 'You were registered successfully.',
             'welcome_dear_user' => 'Welcome dear user!',
+            'logout' => 'You logged out successfully.'
         ],
 
         'unsuccessful' => [
